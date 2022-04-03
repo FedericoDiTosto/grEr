@@ -1,0 +1,65 @@
+.entityPopup {
+    width: 400px;
+    height: fit-content;
+    display: table;
+    background-color: #D7D7D7;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: fixed;
+    z-index: 100;
+    border: 2px solid #5A5A5A;
+}
+
+.close-btn {
+    all: unset;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    background-color: #D30000;
+    color: white;
+    align-items: center;
+    text-align: center;
+    font-size: 1.75em;
+    font-weight: 600;
+}
+
+.close-btn:hover {
+    background-color: #FF2D2D;
+}
+
+.entity-values {
+    width: 90%;
+    height: 25px;
+}
+
+.input-block {
+    display: contents;
+}
+
+.input-block label {
+    font-weight: 800;
+    color: black;
+}
+
+.create-entity-btn {
+    width: 150px;
+    height: 50px;
+    background-color: var(--btn-primary);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.create-entity-btn:hover {
+    background-color: var(--btn-primary-hover);
+}

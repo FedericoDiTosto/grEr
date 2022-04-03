@@ -1,0 +1,21 @@
+.attribute-node {
+    height: 50px;
+    width: 150px;
+    border: 3px solid rgb(71, 71, 71);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    background: white;
+    color: #222222;
+    font-weight: 500;
+}
+
+.attribute-node label {
+    display: block;
+    color: #777;
+    font-size: 12px;
+}
