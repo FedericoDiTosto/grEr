@@ -1,12 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-@font-face {
-  font-family: 'Poppins', sans-serif;
-}
-
 :root {
-  --btn-primary: #d16500;
-  --btn-primary-hover: #ff7b00;
+  --btn-primary: #f79000;
+  --btn-primary-hover: #ffb348;
+  --text-black: #24262b;
 }
 
 .App {
@@ -35,9 +30,9 @@
   bottom: 0;
   right: 0;
   z-index: 1;
-  line-height: 1.5em;
+  line-height: 1.25em;
   font-size: 50px;
-  color: #24262b;
+  color: var(--text-black);
   font-weight: 900;
   padding: 0;
   margin-bottom: 10px;

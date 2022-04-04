@@ -12,7 +12,7 @@
     bottom: 0;
     margin: auto;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     border: 2px solid #5A5A5A;
 }
 
@@ -52,12 +52,14 @@
 }
 
 .create-entity-btn {
-    width: 150px;
+    all: unset;
+    width: 100px;
     height: 50px;
+    border-radius: 25px;
     background-color: var(--btn-primary);
-    color: white;
-    font-weight: 600;
-    border-radius: 10px;
+    text-align: center;
+    color: var(--text-black);
+    font-weight: 900;
 }
 
 .create-entity-btn:hover {

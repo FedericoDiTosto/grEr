@@ -16,7 +16,52 @@
     border: 2px solid #5A5A5A;
 }
 
-.create-entity-btn {
+.close-btn {
     all: unset;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    background-color: #D30000;
+    color: white;
+    align-items: center;
+    text-align: center;
+    font-size: 1.75em;
+    font-weight: 600;
+}
 
+.close-btn:hover {
+    background-color: #FF2D2D;
+}
+
+.input-block {
+    display: contents;
+}
+
+.input-block label {
+    font-weight: 800;
+    color: black;
+}
+
+.attribute-values {
+    width: 90%;
+    height: 25px;
+}
+
+.create-attribute-btn {
+    all: unset;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--btn-primary);
+    text-align: center;
+    color: var(--text-black);
+    font-weight: 900;
+}
+
+.create-attribute-btn:hover {
+    background-color: var(--btn-primary-hover);
 }

@@ -34,9 +34,9 @@ export default function AttrbutePopUp(props) {
         <h3>add an attribute</h3>
         <div className='input-block'>
         <label for="nome">Nome attributo</label>
-        <input className='entity-values' id="nome" onChange={e => setAttributeName(e.target.value)}></input>
+        <input className='attribute-values' id="nome" onChange={e => setAttributeName(e.target.value)}></input>
         </div>
-        <button className='create-entity-btn' onClick={addAttribute}>Aggiungi</button>
+        <button className='create-attribute-btn' onClick={addAttribute}>Aggiungi</button>
         {props.children}
         </div>
   ) : "";

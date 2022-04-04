@@ -6,11 +6,10 @@ function EntityNode(props) {
 const [buttonAttributePopup, setButtonAttributePopup] = useState(false)
 const [AttrList, setAttrList] = useState(0)
   return (
-    
-
-    <div className="entity-node">
-      <AttrbutePopUp triggerAttribute={buttonAttributePopup} setTriggeredAttribute={setButtonAttributePopup} setElements={props.data.setElements} 
+    <>
+    <AttrbutePopUp triggerAttribute={buttonAttributePopup} setTriggeredAttribute={setButtonAttributePopup} setElements={props.data.setElements} 
                       setEdges={props.data.setEdges} idEntity={props.id} elements={props.data.elements} AttrList={AttrList} setAttrList={setAttrList}/>
+    <div className="entity-node">
       <div>
       <div className="add-attribute" onClick={() => setButtonAttributePopup(true)}>+</div>
       </div>
@@ -27,6 +26,7 @@ const [AttrList, setAttrList] = useState(0)
         id="b"
         isConnectable={true} />
     </div>
+    </>
   );
 }
 
