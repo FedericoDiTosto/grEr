@@ -10,12 +10,11 @@ export default function EntityPopUp(props) {
 
     const addEntity = () => {
         props.setElements(e => e.concat({
-          id: (e.length+1).toString(),
+          id: "e"+(e.length+1).toString(),
           data: {label : `${entityName}`,
                 setElements: props.setElements,
                 elements: props.elements,
-                setEdges:props.setEdges,
-                idEntity: e.id,},
+                setEdges:props.setEdges,},
           position: {x: Math.random() * window.innerWidth/3, y: Math.random() * window.innerHeight/3},
           type: 'entityNode',
         }))

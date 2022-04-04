@@ -14,10 +14,10 @@ function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgeChange] = useEdgesState([]);
   const [buttonEntityPopup, setButtonEntityPopup] = useState(false)
-
   return (
   <Fragment>
-    <EntityPopUp trigger={buttonEntityPopup} setTriggered={setButtonEntityPopup} elements={nodes} setElements={setNodes} setEdges={setEdges}/>
+    <EntityPopUp trigger={buttonEntityPopup} setTriggered={setButtonEntityPopup} elements={nodes} 
+                  setElements={setNodes} setEdges={setEdges}/>
     <ReactFlowProvider>
     <ReactFlow nodes={nodes} edges={edges} fitView style={{width:'100%', height:'90vh'}} nodeTypes={nodeTypes} onNodesChange={onNodesChange} onEdgeChange={onEdgeChange}>
     <Controls />

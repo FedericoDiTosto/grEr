@@ -2,18 +2,15 @@ import React, { useState,} from 'react';
 import { Handle, Position } from 'react-flow-renderer';
 import AttrbutePopUp from '../AttributePopUp'
 
-function EntityNode( {data}) {
+function EntityNode(props) {
 const [buttonAttributePopup, setButtonAttributePopup] = useState(false)
-/* const openAttributePopUp = () => {
-  const
-  setButtonAttributePopup(true)
-} */
+const [AttrList, setAttrList] = useState(0)
   return (
     
 
     <div className="entity-node">
-      <AttrbutePopUp triggerAttribute={buttonAttributePopup} setTriggeredAttribute={setButtonAttributePopup} setElements={data.setElements} 
-                      setEdges={data.setEdges} idEntity={data.idEntity} elemets={data.elemets}/>
+      <AttrbutePopUp triggerAttribute={buttonAttributePopup} setTriggeredAttribute={setButtonAttributePopup} setElements={props.data.setElements} 
+                      setEdges={props.data.setEdges} idEntity={props.id} elements={props.data.elements} AttrList={AttrList} setAttrList={setAttrList}/>
       <div>
       <div className="add-attribute" onClick={() => setButtonAttributePopup(true)}>+</div>
       </div>
@@ -23,7 +20,7 @@ const [buttonAttributePopup, setButtonAttributePopup] = useState(false)
         position="top"
         id="a"
         isConnectable={true}/>
-      <h2 >{data.label}</h2>
+      <h2 >{props.data.label}</h2>
       <Handle
         type="source"
         position="bottom"

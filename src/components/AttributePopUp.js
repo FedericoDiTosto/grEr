@@ -9,22 +9,24 @@ export default function AttrbutePopUp(props) {
     }
 
     const addAttribute = () => {
-        props.setElements(e => e.concat({
-          id: (e.length+1).toString(),
+      props.setAttrList(e => e + 1)
+      console.log(props.AttrList)
+         props.setElements(e => e.concat({
+          id: "a"+props.idEntity+props.AttrList.toString(),
           data: {label : `${attributeName}`,},
           position: {x: Math.random() * window.innerWidth/3, y: Math.random() * window.innerHeight/3},
           type: 'attributeNode',
         }))
 
+        
 
         props.setEdges(e => e.concat({
-          id: "qqq",
+          id: "aConnet"+(Math.random().toString()),
           type: 'straight',
           source:  props.idEntity,
-          target: props.idEntity,
-          
-        })) 
-      }
+          target: "a"+props.idEntity+props.AttrList.toString(),
+        }))
+      } 
 
   return (props.triggerAttribute) ? (
     <div className='attributePopup'>
