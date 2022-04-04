@@ -1,4 +1,4 @@
-.attributePopup {
+.AddPopUp {
     width: 400px;
     height: fit-content;
     display: table;
@@ -51,7 +51,7 @@
     height: 25px;
 }
 
-.create-attribute-btn {
+.create-btn {
     all: unset;
     width: 100px;
     height: 50px;
@@ -62,6 +62,6 @@
     font-weight: 900;
 }
 
-.create-attribute-btn:hover {
+.create-btn {
     background-color: var(--btn-primary-hover);
 }

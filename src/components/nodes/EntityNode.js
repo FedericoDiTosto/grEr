@@ -1,13 +1,13 @@
 import React, { useState,} from 'react';
 import { Handle, Position } from 'react-flow-renderer';
-import AttrbutePopUp from '../AttributePopUp'
+import AddPopUp from '../AddPopUp'
 
 function EntityNode(props) {
 const [buttonAttributePopup, setButtonAttributePopup] = useState(false)
 const [AttrList, setAttrList] = useState(0)
   return (
     <>
-    <AttrbutePopUp triggerAttribute={buttonAttributePopup} setTriggeredAttribute={setButtonAttributePopup} setElements={props.data.setElements} 
+    <AddPopUp triggerAttribute={buttonAttributePopup} setTriggeredAttribute={setButtonAttributePopup} setElements={props.data.setElements} 
                       setEdges={props.data.setEdges} idEntity={props.id} elements={props.data.elements} AttrList={AttrList} setAttrList={setAttrList}/>
     <div className="entity-node">
       <div>
