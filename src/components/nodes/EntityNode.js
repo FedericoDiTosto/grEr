@@ -12,11 +12,12 @@ const [buttonAttributePopup, setButtonAttributePopup] = useState(false)
 //AttrList is the number to assign to the composed id
 //of the attribute, it will be incremented adding an attribute
 const [AttrList, setAttrList] = useState(0)
+const [RelationList, setRelationList] = useState(0)
   return (
     <>
     <AddPopUp triggerAttribute={buttonAttributePopup} setTriggeredAttribute={setButtonAttributePopup} setElements={props.data.setElements} 
                       setEdges={props.data.setEdges} idEntity={props.id} elements={props.data.elements} AttrList={AttrList} 
-                      setAttrList={setAttrList}/>
+                      setAttrList={setAttrList} setRelationList={setRelationList} RelationList={RelationList}/>
     <div className="entity-node">
       <div>
       <div className="add-attribute" onClick={() => setButtonAttributePopup(true)}>+</div>

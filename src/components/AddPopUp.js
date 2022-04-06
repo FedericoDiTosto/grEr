@@ -11,6 +11,13 @@ export default function AddPopUp(props) {
     const [selected, setSelected] = useState("")
     const [relationName, setRelationName] = useState("")
     const [relationId, setRelationId] = useState("")
+    //cardinality 2 entity
+    const [cardE1, setCardE1] = useState("")
+    const [cardE2, setCardE2] = useState("")
+
+    //find the name of the entity that opened the popup
+    const e_name = entityIds.find(e => e.id == props.idEntity)
+
   //function activated clicking on close button on the popup
     const closePopup = () => {
         props.setTriggeredAttribute(false);
@@ -39,14 +46,30 @@ export default function AddPopUp(props) {
 
       //function to add a new relation between two entity
       const addRelation = () => {
+          props.setRelationList(e => e + 1)
+          //add the new element in elements array
+          props.setElements(e => e.concat({
+             id: "rel"+props.idEntity+relationId+props.RelationList.toString(),
+             data: {label : `${relationName}`,},
+             position: {x: Math.random() * window.innerWidth/3, y: Math.random() * window.innerHeight/3},
+             type: 'relationNode',
+          }))
+
           props.setEdges(e => e.concat({
             id: "aConnet"+(Math.random().toString()),
-            type: 'buttonedge',
             source:  props.idEntity,
-            target: relationId,
-            name: relationName,
+            target: "rel"+props.idEntity+relationId+props.RelationList.toString(),
+            type: 'straight',
+            label: cardE1,
             }))
-            console.log(relationName)
+
+            props.setEdges(e => e.concat({
+              id: "aConnet"+(Math.random().toString()),
+              source: "rel"+props.idEntity+relationId+props.RelationList.toString(),
+              target: relationId,
+              type: 'straight',
+              label: cardE2,
+              }))
         } 
       
 
@@ -89,8 +112,18 @@ export default function AddPopUp(props) {
         {selected == "Relazione" ? (
           <>
             <div className='input-block'>
+              <div className='input-group'>
               <label for="nome">Nome {selected}</label>
-              <input className='attribute-values' id="nome" onChange={e => setRelationName(e.target.value)}></input>
+              <input className='relation-values' id="nome" onChange={e => setRelationName(e.target.value)}></input>
+              </div>
+              <div className='input-group'>
+              <label for="cardE1">Cardinalità dell' entità 1 (x,x)</label>
+              <input className='relation-values' id="cardE1" onChange={e => setCardE1(e.target.value)}></input>
+              </div>
+              <div className='input-group'>
+              <label for="cardE2">Cardinalità dell' entità 2 (x,x)</label>
+              <input className='relation-values' id="cardE2" onChange={e => setCardE2(e.target.value)}></input>
+              </div>
               <span for="entities">Relazione con :</span>
               <select name="entities" className='entities' onChange={onChangeRelationId}>
                 {entityIds.map((option) => (

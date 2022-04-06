@@ -41,10 +41,16 @@
     display: contents;
 }
 
-.input-block label {
-    font-weight: 800;
-    color: black;
+.input-group {
+    display: grid;
+    padding: 10px;
 }
+
+.input-group label {
+    font-weight: 500;
+    color: var(--text-black);
+}
+
 
 .attribute-values {
     width: 90%;

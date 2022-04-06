@@ -47,8 +47,8 @@
 }
 
 .input-block label {
-    font-weight: 800;
-    color: black;
+    font-weight: 500;
+    color: var(--text-black);
 }
 
 .create-entity-btn {
