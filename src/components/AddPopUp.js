@@ -86,60 +86,60 @@ export default function AddPopUp(props) {
     <div className='AddPopUp'>
       <button className='close-btn' onClick={closePopup}>X</button>
       <h3>add</h3>
-      <div onChange={onChangeValueRadio}>            
+      <div className="radio-box" onChange={onChangeValueRadio}>            
         <div>
-          <input type="radio" name="radio-selec" value="Attributo" />
-          <label for="attribute-radio">Attributo</label>
+          <label for="attribute-radio">Attribute</label>
+          <input type="radio" name="radio-selec" value="Attribute" id="attribute-radio"/>
         </div>
         <div>
-          <input type="radio" name="radio-selec" value="Relazione"/>
-          <label for="relation-radio">Relazione</label>
+          <label for="relation-radio">Relationship</label>
+          <input type="radio" name="radio-selec" value="Relationship" id="relation-radio"/>
         </div>
         <div>
-          <input type="radio" name="radio-selec" value="Specializzazine" />
-          <label for="specialization-radio">Specializzazioe</label>
+          <label for="specialization-radio">Specialization</label>
+          <input type="radio" name="radio-selec" value="Specialization" id="specialization-radio"/>
         </div>
       </div> 
-        {selected == "Attributo" ? (
+        {selected == "Attribute" ? (
           <>
             <div className='input-block'>
-              <label for="nome">Nome {selected}</label>
+              <label for="name">Name {selected}</label>
               <input className='attribute-values' id="nome" onChange={e => setAttributeName(e.target.value)}></input>
             </div>
-            <button className='create-btn' onClick={addAttribute}>Aggiungi</button>
+            <button className='create-btn' onClick={addAttribute}>Add</button>
           </>
         ) : "" }
-        {selected == "Relazione" ? (
+        {selected == "Relationship" ? (
           <>
             <div className='input-block'>
               <div className='input-group'>
-              <label for="nome">Nome {selected}</label>
-              <input className='relation-values' id="nome" onChange={e => setRelationName(e.target.value)}></input>
+              <label for="name">Name {selected}</label>
+              <input className='relation-values' id="name" onChange={e => setRelationName(e.target.value)}></input>
               </div>
               <div className='input-group'>
-              <label for="cardE1">Cardinalità dell' entità 1 (x,x)</label>
+              <label for="cardE1">Entity 1 Cardinality (x,x)</label>
               <input className='relation-values' id="cardE1" onChange={e => setCardE1(e.target.value)}></input>
               </div>
               <div className='input-group'>
-              <label for="cardE2">Cardinalità dell' entità 2 (x,x)</label>
+              <label for="cardE2">Entity 2 Cardinality (x,x)</label>
               <input className='relation-values' id="cardE2" onChange={e => setCardE2(e.target.value)}></input>
               </div>
-              <span for="entities">Relazione con :</span>
+              <span for="entities">Relationship with:</span>
               <select name="entities" className='entities' onChange={onChangeRelationId}>
                 {entityIds.map((option) => (
                   <option value={option.id}>{option.name}</option>
                 ))}
              </select>
             </div>
-            <button className='create-btn' onClick={addRelation}>Aggiungi</button>
+            <button className='create-btn' onClick={addRelation}>Add</button>
           </>) : "" }
-        {selected == "Specializzazine" ? ( 
+        {selected == "Specialization" ? ( 
           <>
             <div className='input-block'>
-              <label for="nome">Nome {selected}</label>
-              <input className='attribute-values' id="nome" onChange={e => setAttributeName(e.target.value)}></input>
+              <label for="name">Name {selected}</label>
+              <input className='attribute-values' id="name" onChange={e => setAttributeName(e.target.value)}></input>
             </div>
-            <button className='create-btn' onClick={addAttribute}>Aggiungi</button>
+            <button className='create-btn' onClick={addAttribute}>Add</button>
           </>) : "" }
         {props.children}
       </div>

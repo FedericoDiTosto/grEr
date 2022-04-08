@@ -14,14 +14,13 @@ const [buttonAttributePopup, setButtonAttributePopup] = useState(false)
 const [AttrList, setAttrList] = useState(0)
 const [RelationList, setRelationList] = useState(0)
   return (
-    <>
+    <div className="entity-node">
     <AddPopUp triggerAttribute={buttonAttributePopup} setTriggeredAttribute={setButtonAttributePopup} setElements={props.data.setElements} 
                       setEdges={props.data.setEdges} idEntity={props.id} elements={props.data.elements} AttrList={AttrList} 
                       setAttrList={setAttrList} setRelationList={setRelationList} RelationList={RelationList}/>
-    <div className="entity-node">
-      <div>
-      <div className="add-attribute" onClick={() => setButtonAttributePopup(true)}>+</div>
-      </div>
+      <div className={props.data.entityType}>
+        <div className="add-attribute" onClick={() => setButtonAttributePopup(true)}>+</div>
+      
       
       <Handle
         type="target"
@@ -34,8 +33,8 @@ const [RelationList, setRelationList] = useState(0)
         position="bottom"
         id="b"
         isConnectable={true} />
+      </div>
     </div>
-    </>
   );
 }
 

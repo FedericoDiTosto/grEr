@@ -20,6 +20,13 @@
     font-size: 12px;
 }
 
+.standard {}
+
+.weak {
+    border: 3px solid rgb(71, 71, 71);
+    padding: 5px;
+}
+
 .add-attribute {
     width: 17px;
     height: 17px;

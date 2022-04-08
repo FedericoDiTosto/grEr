@@ -37,6 +37,13 @@
     background-color: #FF2D2D;
 }
 
+.radio-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
 .input-block {
     display: contents;
 }

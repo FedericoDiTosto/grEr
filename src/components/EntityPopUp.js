@@ -7,6 +7,7 @@ export default function EntityPopUp(props) {
     //name of entity passed by the user
     const [entityName, setEntityName] = useState("")
     //list of Entity Ids
+    const [entityType, setEntityType] = useState("standard")
     
 
     //function activated clicking on close button on the popup
@@ -29,23 +30,30 @@ export default function EntityPopUp(props) {
                 setElements: props.setElements,
                 elements: props.elements,
                 setEdges:props.setEdges,
+                entityType: entityType,
             },
         position: {x: Math.random() * window.innerWidth/3, y: Math.random() * window.innerHeight/3},
         type: 'entityNode',
       }))
       //reset to empty the entityName
       setEntityName("")
+      setEntityType("standard")
     }
 
   return (props.trigger) ? (
     <div className='entityPopup'>
         <button className='close-btn' onClick={closePopup}>X</button>
-        <h3>add an entity</h3>
+        <h3>Add an entity</h3>
         <div className='input-block'>
-        <label for="nome">Nome</label>
-        <input className='entity-values' id="nome" onChange={e => setEntityName(e.target.value)}></input>
+          <label for="nome">Name</label>
+          <input className='entity-values' id="nome" onChange={e => setEntityName(e.target.value)}></input>
         </div>
-        <button className='create-entity-btn' onClick={addEntity}>Aggiungi</button>
+          <span for="entities">Type:</span>
+              <select name="entities" className='entities' onChange={e => setEntityType(e.target.value)}>
+                  <option value="standard" >standard</option>
+                  <option value="weak" >weak</option>
+             </select>
+        <button className='create-entity-btn' onClick={addEntity}>Add</button>
         {props.children}
         </div>
   ) : "";
