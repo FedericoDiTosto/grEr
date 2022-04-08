@@ -37,7 +37,7 @@ export default function EntityPopUp(props) {
       }))
       //reset to empty the entityName
       setEntityName("")
-      setEntityType("standard")
+      setEntityType("entity-standard")
     }
 
   return (props.trigger) ? (

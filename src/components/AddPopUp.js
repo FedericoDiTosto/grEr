@@ -10,7 +10,7 @@ export default function AddPopUp(props) {
   //for each component permit to show different elements of the popup
     const [selected, setSelected] = useState("")
     const [relationName, setRelationName] = useState("")
-    const [relationId, setRelationId] = useState("")
+    const [relationId, setRelationId] = useState(entityIds[0].id)
     //cardinality 2 entity
     const [cardE1, setCardE1] = useState("")
     const [cardE2, setCardE2] = useState("")
