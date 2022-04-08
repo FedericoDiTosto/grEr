@@ -20,9 +20,9 @@
     font-size: 12px;
 }
 
-.standard {}
+.entity-standard {}
 
-.weak {
+.entity-weak {
     border: 3px solid rgb(71, 71, 71);
     padding: 5px;
 }

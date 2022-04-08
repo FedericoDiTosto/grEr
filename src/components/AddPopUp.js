@@ -14,7 +14,7 @@ export default function AddPopUp(props) {
     //cardinality 2 entity
     const [cardE1, setCardE1] = useState("")
     const [cardE2, setCardE2] = useState("")
-    const [attributeType, setAttributeType] = useState("standard")
+    const [attributeType, setAttributeType] = useState("attribute-standard")
 
     //find the name of the entity that opened the popup
     const e_name = entityIds.find(e => e.id == props.idEntity)
@@ -36,7 +36,7 @@ export default function AddPopUp(props) {
          position: {x: Math.random() * window.innerWidth/3, y: Math.random() * window.innerHeight/3},
          type: 'attributeNode',
       }))
-
+      if(attributeType != "attribute-weak"){
       //add the new connection between entity and attribute
       props.setEdges(e => e.concat({
         id: "aConnet"+(Math.random().toString()),
@@ -44,8 +44,17 @@ export default function AddPopUp(props) {
         source:  props.idEntity,
         target: "a"+props.idEntity+props.AttrList.toString(),
       }))
-
-      setAttributeType("standard")
+    }
+    else{
+      props.setEdges(e => e.concat({
+        id: "aConnet"+(Math.random().toString()),
+        type: 'straight',
+        source:  props.idEntity,
+        target: "a"+props.idEntity+props.AttrList.toString(),
+        animated:true,
+      }))
+    }
+      setAttributeType("attribute-standard")
       } 
 
       //function to add a new relation between two entity
@@ -112,8 +121,9 @@ export default function AddPopUp(props) {
             </div>
             <span for="attributes-types">Type:</span>
               <select name="attributes-types" className='attributes' onChange={e => setAttributeType(e.target.value)}>
-                  <option value="standard" >standard</option>
-                  <option value="weak" >weak</option>
+                  <option value="attribute-standard" >standard</option>
+                  <option value="attribute-weak" >weak</option>
+                  <option value="attribute-multivalue" >multivalue</option>
              </select>
             <button className='create-btn' onClick={addAttribute}>Add</button>
           </>
