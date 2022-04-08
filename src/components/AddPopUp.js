@@ -14,6 +14,7 @@ export default function AddPopUp(props) {
     //cardinality 2 entity
     const [cardE1, setCardE1] = useState("")
     const [cardE2, setCardE2] = useState("")
+    const [attributeType, setAttributeType] = useState("standard")
 
     //find the name of the entity that opened the popup
     const e_name = entityIds.find(e => e.id == props.idEntity)
@@ -30,7 +31,8 @@ export default function AddPopUp(props) {
       //add the new element in elements array
       props.setElements(e => e.concat({
          id: "a"+props.idEntity+props.AttrList.toString(),
-         data: {label : `${attributeName}`,},
+         data: {label : `${attributeName}`,
+                attributeType, attributeType},
          position: {x: Math.random() * window.innerWidth/3, y: Math.random() * window.innerHeight/3},
          type: 'attributeNode',
       }))
@@ -42,6 +44,8 @@ export default function AddPopUp(props) {
         source:  props.idEntity,
         target: "a"+props.idEntity+props.AttrList.toString(),
       }))
+
+      setAttributeType("standard")
       } 
 
       //function to add a new relation between two entity
@@ -85,7 +89,7 @@ export default function AddPopUp(props) {
   return (props.triggerAttribute) ? (
     <div className='AddPopUp'>
       <button className='close-btn' onClick={closePopup}>X</button>
-      <h3>add</h3>
+      <h3>Add</h3>
       <div className="radio-box" onChange={onChangeValueRadio}>            
         <div>
           <label for="attribute-radio">Attribute</label>
@@ -106,6 +110,11 @@ export default function AddPopUp(props) {
               <label for="name">Name {selected}</label>
               <input className='attribute-values' id="nome" onChange={e => setAttributeName(e.target.value)}></input>
             </div>
+            <span for="attributes-types">Type:</span>
+              <select name="attributes-types" className='attributes' onChange={e => setAttributeType(e.target.value)}>
+                  <option value="standard" >standard</option>
+                  <option value="weak" >weak</option>
+             </select>
             <button className='create-btn' onClick={addAttribute}>Add</button>
           </>
         ) : "" }

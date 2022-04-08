@@ -48,8 +48,8 @@ export default function EntityPopUp(props) {
           <label for="nome">Name</label>
           <input className='entity-values' id="nome" onChange={e => setEntityName(e.target.value)}></input>
         </div>
-          <span for="entities">Type:</span>
-              <select name="entities" className='entities' onChange={e => setEntityType(e.target.value)}>
+          <span for="entities-types">Type:</span>
+              <select name="entities-types" className='entities' onChange={e => setEntityType(e.target.value)}>
                   <option value="standard" >standard</option>
                   <option value="weak" >weak</option>
              </select>

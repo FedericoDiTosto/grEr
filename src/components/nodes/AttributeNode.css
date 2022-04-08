@@ -1,5 +1,5 @@
 .attribute-node {
-    height: 50px;
+    height: fit-content;
     width: 150px;
     border: 3px solid rgb(71, 71, 71);
     align-items: center;
@@ -12,6 +12,14 @@
     background: white;
     color: #222222;
     font-weight: 500;
+}
+
+.standard {}
+
+.weak {
+    border: 3px solid rgb(71, 71, 71);
+    border-radius: 50%;
+
 }
 
 .attribute-node label {

@@ -20,8 +20,6 @@ const [RelationList, setRelationList] = useState(0)
                       setAttrList={setAttrList} setRelationList={setRelationList} RelationList={RelationList}/>
       <div className={props.data.entityType}>
         <div className="add-attribute" onClick={() => setButtonAttributePopup(true)}>+</div>
-      
-      
       <Handle
         type="target"
         position="top"

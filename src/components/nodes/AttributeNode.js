@@ -1,11 +1,15 @@
-import { Handle, Position } from 'react-flow-renderer';
+import { Handle } from 'react-flow-renderer';
 
 function AttributeNode(props) {
   return (
     <div className="attribute-node">
-      <Handle type="target" position={Position.Top} isConnectable={true}/>
+      <div className={props.data.attributeType}>
+      <Handle type="target" position="top"
+             id="a" isConnectable={true}/>
       <label>{props.data.label}</label>
-      <Handle type="source" position={Position.Bottom} id="b" isConnectable={true}/>
+      <Handle type="source" position="bottom"
+               id="b" isConnectable={true}/>
+      </div>
     </div>
   );
 }
