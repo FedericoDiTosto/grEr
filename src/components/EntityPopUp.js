@@ -59,3 +59,24 @@ export default function EntityPopUp(props) {
   ) : "";
 }
 
+export  function ModifyEntityPopUp(props) {
+  const [modifiedEntityName, setModifiedEntityName] = useState("")
+
+    const modifyEntity = () => {
+      props.setElements(e => e.find(x => x.id === props.idEntity).data.label =`${modifiedEntityName}`)
+    }
+
+return (props.modifyEntityTrigger) ? (
+
+  <div className='entityPopup'>
+      <button className='close-btn' onClick={() => props.setModifyEntityTriggered(false)}>X</button>
+      <h3>Add an entity</h3>
+      <div className='input-block'>
+        <label for="name">Name</label>
+        <input className='entity-values' id="entity-name-modified" onChange={e => setModifiedEntityName(e.target.value)}></input>
+      </div>
+      <button className='create-entity-btn' onClick={modifyEntity}>Modify</button>
+      {props.children}
+      </div>
+) : "";
+}
